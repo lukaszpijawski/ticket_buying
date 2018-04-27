@@ -1,0 +1,42 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TicketBuying"
+        x:Class="TicketBuying.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+
+    <Grid x:Name="ProgramGrid">
+        <TextBlock HorizontalAlignment="Left" Margin="37,18,0,0" TextWrapping="Wrap" Text="Dostępne wydarzenia" VerticalAlignment="Top" Width="183"/>
+        <TextBlock HorizontalAlignment="Left" Margin="571,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"><Run Text="Liczba dostępnych miejsc"/><Run Text=":"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="43,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Text="Wprowadź swoje imię i nazwisko"/>
+        <Button x:Name="Order" Content="Zamów!" HorizontalAlignment="Left" Margin="37,240,0,0" VerticalAlignment="Top" Width="158" Click="Order_Click"/>
+        <TextBox x:Name="FullName" HorizontalAlignment="Left" Height="28" Margin="37,188,0,0" TextWrapping="Wrap" Text="{Binding NameOfBuyer, Mode=TwoWay}" VerticalAlignment="Top" Width="197"/>
+        <ListBox x:Name="AvailableEvents" HorizontalAlignment="Left" Height="110" Margin="37,37,0,0" VerticalAlignment="Top" Width="491" SelectionChanged="AvailableEvents_SelectionChanged"/>
+        <TextBlock x:Name="NumberOfAvailablePlaces" HorizontalAlignment="Left" Margin="571,60,0,0" TextWrapping="Wrap" Text="Wybierz wydarzenie" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.508,-0.75"/>
+        <TextBlock HorizontalAlignment="Left" Margin="37,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"><Run Text="Podgląd Twojego biletu"/><Run Text=":"/></TextBlock>
+        
+        <Image x:Name="TicketImage" HorizontalAlignment="Left" Height="100" Margin="410,333,0,0" VerticalAlignment="Top" Width="154"/>
+        <TextBlock x:Name="TicketEventName" HorizontalAlignment="Left" Margin="130,311,0,0" TextWrapping="Wrap" Text="{Binding EventName}" VerticalAlignment="Top" Width="256"/>
+        <TextBlock x:Name="TicketPrice" Text="{Binding EventPrice}" HorizontalAlignment="Left" Margin="130,395,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236"/>
+        <TextBlock x:Name="TicketFullName" Text="{Binding NameOfBuyer}" HorizontalAlignment="Left" Margin="130,426,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271"/>
+        
+        <TextBlock x:Name="TicketPlace" Text="{Binding EventPlace}" HorizontalAlignment="Left" Margin="130,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="256"/>
+        <TextBlock x:Name="TicketDate" HorizontalAlignment="Left" Margin="130,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="{Binding EventDate}" Width="280"/>
+
+        
+        <Label Content="Data:" HorizontalAlignment="Left" Margin="37,333,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.703,1.192"/>
+        <Label Content="Miejsce:" HorizontalAlignment="Left" Margin="37,359,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cena:" HorizontalAlignment="Left" Margin="37,389,0,0" VerticalAlignment="Top"/>
+        <Label Content="Wydarzenie:" HorizontalAlignment="Left" Margin="37,304,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nazwisko:" HorizontalAlignment="Left" Margin="37,420,0,0" VerticalAlignment="Top"/>
+        
+        
+        <TextBlock HorizontalAlignment="Left" Margin="361,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Text="Wybierz procesor płatniczy"/>
+        <ListBox x:Name="AvailablePaymentProcessors" HorizontalAlignment="Left" Height="72" Margin="361,188,0,0" VerticalAlignment="Top" Width="308"/>
+        <TextBlock HorizontalAlignment="Left" Margin="571,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Text="Cena biletu:"/>
+        <TextBlock x:Name="EventPrice" HorizontalAlignment="Left" Margin="571,115,0,0" TextWrapping="Wrap" Text="Wybierz wydarzenie" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.508,-0.75"/>
+    </Grid>
+</Window>
